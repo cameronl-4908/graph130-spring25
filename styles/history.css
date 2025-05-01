@@ -3,7 +3,7 @@ body {
     padding:0px;
     font-size:16px;
     box-sizing:border-box;
-    font-family: "Oswald" sans-serif;
+    font-family: "Roboto", sans-serif;
     color:burlywood;
 }
 main {
@@ -18,4 +18,8 @@ section {
     border:solid burlywood 2px;
     border-radius:5px;
     padding:5px;
+}
+.tim {
+    /* flex-grow:2 !important; */
+    background-color:lightblue;
 }
