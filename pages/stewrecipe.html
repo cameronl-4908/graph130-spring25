@@ -18,6 +18,14 @@
         </style>  
     </head>
     <body>
+        <div id="nav-placeholder"></div>
+        <script>
+            fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+            });
+        </script>
         <div class="stew-content">
             <h1 style="color:#805E28;font-size:26px;">How To Make the Best Beef Stew from Scratch</h1>
             <p>Homemade beef stew is a dish that will serve you well through long winters and family visits and other small moments of need.</p>
