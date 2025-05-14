@@ -30,18 +30,18 @@ header h2{
     font-size:15px;
 }
 
-nav ul {
+.novel ul {
     text-align:center;
     list-style:none;
     background-color:#44a5b5;
     margin-bottom:15px;
 }
 
-nav li {
+.novel li {
     display:inline-block;
 }
 
-nav a {
+.novel a {
     padding:9px;
     display:block;
     width:100px;
@@ -50,7 +50,7 @@ nav a {
     color:white;
 }
 
-nav a:hover {
+.novel a:hover {
     background-color:#334e5f;
 }
 
