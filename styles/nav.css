@@ -2,6 +2,7 @@
     background-color:#50767f;
     border-radius:5px;
     padding:10px;
+    color:aliceblue;
 }
 .kiwi ul {
     display:flex;
@@ -11,6 +12,7 @@
     list-style:none;
     margin:5px;
     border-style:dotted;
+    padding:1px;
 }
 .kiwi a {
     text-decoration:none;
