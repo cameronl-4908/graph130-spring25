@@ -93,12 +93,10 @@ footer p {
 
 h1,h2,h3 {
     padding: .5em 0px .25em 10px;
-    font-family: "Press Start 2P", system-ui;
-    font-size:1.25em;
+    font-family: "Rowdies", sans-serif;
+    font-size:1.85em;
 }
 h1 {
-    font-size:1.75em;
+    font-size:2.5em;
 }
-h2 {
-    padding-left:14px;
-}
+
