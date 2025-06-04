@@ -3,7 +3,7 @@
     display:flex;
     flex-wrap:wrap;
 }
-.kiwi {
+.kiwi li{
     font-size:1em;
 
 }

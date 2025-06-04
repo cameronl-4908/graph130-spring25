@@ -1,0 +1,48 @@
+body, header, footer, nav, div, p, h1, h2, h3, h4, article, section, figure {
+    margin:0;
+    padding:0;
+    display:block;
+}
+body {
+    background-color:antiquewhite;
+    font-size:14px;
+}
+
+header {
+    background-color:navy;
+    padding:5% 1%;
+    color:white;
+}
+article {
+    padding:1%;
+}
+figure img {
+    width:100%;
+}
+figcaption {
+    font-size:.5em;
+}
+h2 {
+    font-size:1.25em;
+    padding:10px 5% 0 0;
+}
+h3 {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight:100;
+    font-size:1em;
+}
+p {
+    font-size:.75em;
+    padding:10px 5% 0 0;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+footer {
+    padding:1%;
+    background-color:black;
+}
+footer p {
+    color:white; 
+    
+}
+
+
