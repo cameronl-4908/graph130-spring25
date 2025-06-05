@@ -4,17 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grid Layout</title>
-
-    <link rel="stylesheet" href="../styles/grid480.css"/>
-    <link rel="stylesheet" href="../styles/grid1024.css" media="screen and (min-width:481px)"/>
-    <link rel="stylesheet" href="../styles/grid1280.css" media="screen and (min-width:1025px)"/>
+    <style>
+        body, header, footer, nav, div, p, h1, h2, h3, h4, article, section, figure {
+            margin:0;
+            padding:0;
+            display:block;
+        }
+        body {
+            background-color:antiquewhite;
+            font-size:16px;
+        }
+        .header {
+            background-color:rgb(105, 173, 255);
+            padding:1%;
+        }
+        main {
+            padding:1%;
+        }
+        figure img {
+            width:100%;
+        }
+        figcaption {
+            font-size:.5em;
+            margin:5px 0px;
+        }
+        h2 {
+            font-size:1.25em;
+            padding:10px 5% 0 0;
+        }
+        h3 {
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            font-weight:100;
+            font-size:1em;
+        }
+        p {
+            font-size:.75em;
+            padding:10px 5% 0 0;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        .footer {
+            background-color:black;
+            color:white;
+            padding:1%;
+        }
+    </style>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css" integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+    <link href="../styles/mobile.css" rel="stylesheet">
 
 </head>
 <body>
-    <div id="nav-placeholder"></div>
+    <article id="nav-placeholder"></article>
     <script>
         fetch('nav.html')
         .then(response => response.text())
@@ -22,48 +63,17 @@
         document.getElementById('nav-placeholder').innerHTML = data;
         });
     </script>
-    <header>
-        <h1>Pure CSS Grid Layout</h1>
-    </header>
-    <article>
-        <section class="img">
-            <div class="pure-g">
-                <div class="pure-u-1-4">
-                    <figure>
-                        <img src="../images/whidbey.jpg" alt="Whidbey island">
-                        <figcaption><i>Taisia Karaseva</i></figcaption>
-                    </figure>
-                    
-                </div>
-                <div class="pure-u-1-4">
-                    <figure>
-                        <img src="../images/whale1.jpg" alt="Whale 1">
-                        <figcaption><i>Gabrielle Polita</i></figcaption>
-                    </figure>
-                </div>
-                <div class="pure-u-1-4">
-                    <figure>
-                        <img src="../images/whale2.jpg" alt="Whale 2">
-                        <figcaption><i>Roberto Lopez</i></figcaption>
-                    </figure>
-                    
-                </div>
-                <div class="pure-u-1-4">
-                    <figure>
-                        <img src="../images/cove.jpg" alt="Cove">
-                        <figcaption><i>Jasper van der Meij</i></figcaption>
-                    </figure>
-                    
-                </div>
-            </div>
+    <main>
+        <section class="header">
+            <h1>Pure CSS Grid Layout</h1>
+            <p>Graphic and web-designers work in the dimension that can be broken down to the rectangle, be it a page or a screen. This determines the shape of the grid as well. The lines within the grid are customized. Creators can build the grid themselves or rely on ready grid systems, while designers can use the same grid system throughout the whole piece of design, or create a new grid for each page to express their ideas. <a href="https://www.eleken.co/blog-posts/grid-layout-design-history-tips-and-best-examples Links to an external site." target="_blank">eleken.co</a></p>
         </section>
-        <section class="poem">
-            <div class="pure-g">
-                <div class="pure-u-1-3">
+        <section class="pure-g">
+                <article class="pure-u-1-3">
                     <h2>Whidbey Island</h2>
                     <h3><i>By Carlina Duan</i></h3>
                     <p>on the trail, we walk past stinging nettle, draping
-                    in eloquent green stalks down the path: <i>If you're stung</i>,</p>
+                    in eloquent green stalks down the path: <i>If you're stung</i></p>
 
                     <p>know it will pass. a younger self once refused to listen—
                     ignorant to the worlds laced within a decomposing</p>
@@ -103,8 +113,8 @@
 
                     <p>bound by some other nameless creature with legs.
                     nearby, your mouth plays truant in the light.</p>
-                </div>
-                <div class="pure-u-1-3">
+                </article>
+                <article class="pure-u-1-3">
                     <h2>In Search of the White Whale</h2>
                     <h3><i>By Jose A. Alcantra</i></h3>
                     <p>Just as a fishing boat passes<br>
@@ -139,8 +149,8 @@
 
                     <p>the whale, racing away<br>
                     at the speed of light.</p>
-                </div>
-                <div class="pure-u-1-3">
+                </article>
+                <article class="pure-u-1-3">
                     <h2>The Cove</h2>
                     <h3><i>By Seth Rosenbloom</i></h3>
                     <p>I'm resting on a tide-bleached tree, and you</p>
@@ -164,12 +174,31 @@
                     <p>that shoulder hemlocks. Lava born from the mantel,</p>
                     <p>cooled into outcrops, carved to pool star fish and purple</p>
                     <p>anemones. Home of endless give and take.</p>
-                </div>
-            </div>
+                </article>
+            </section>
         </section>
-    </article>
-    <footer>
-        <p>EvCC | Spring 2025 | Cameron Larsh</p>
-    </footer>
+        <section class="pure-g">
+            <figure class="pure-u-1-4">
+                <img src="../images/whidbey.jpg" alt="Whidbey island">
+                <figcaption><i>Taisia Karaseva</i></figcaption>
+            </figure>
+            <figure class="pure-u-1-4">
+                <img src="../images/whale1.jpg" alt="Whale 1">
+                <figcaption><i>Gabrielle Polita</i></figcaption>
+            </figure>
+            <figure class="pure-u-1-4">
+                <img src="../images/whale2.jpg" alt="Whale 2">
+                <figcaption><i>Roberto Lopez</i></figcaption>
+            </figure>
+            <figure class="pure-u-1-4">
+                <img src="../images/cove.jpg" alt="Cove">
+                <figcaption><i>Jasper van der Meij</i></figcaption>
+            </figure>
+                    
+        </section>
+        <section class="footer">
+            <p>EvCC | Spring 2025 | Cameron Larsh</p>
+        </section>
+    </main>
 </body>
 </html>
