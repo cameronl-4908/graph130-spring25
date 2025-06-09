@@ -5,28 +5,32 @@
     font-size:16px;
 }
 .kiwi {
-    background-color:#004f41;
+    background-color:blueviolet;
     color:aliceblue;
-    
+    padding:10px;
+    border-bottom:black 8px solid;
+    border-top:black 8px solid;
 }
 
 .kiwi li {
-    font-size:1.5em;
+    font-size:1.25em;
     list-style:none;
-    border:dotted 3px orangered;
-    padding:5px .5em 5px .5em;
+    border-bottom:dotted 3px orangered;
+    text-align:center;
 }
 .kiwi a {
     text-decoration:none;
-    color: #ffffff;
-    padding:.2em;       
-    border-radius:5px;
-    transition: background-color 0.3;
+    color: #ffffff;       
     font-family:'Gill Sans';
 }
+.kiwi li:active {
+    font-color:red;
+}
 .kiwi li:hover {
-    background-color:royalblue;
+    transition:.3s;
     border:groove 5px red;
+    background-color:rgba(0,0,0,.4);
+    font-size:1.5em; 
     color:yellow;
 }
 

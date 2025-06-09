@@ -1,10 +1,10 @@
 
 .kiwi ul {
     display:grid;
-    grid-template-columns:auto auto auto auto auto auto auto auto auto;
+    grid-template-columns:auto auto auto auto auto auto auto auto auto auto auto;
 }
 .kiwi li{
-    font-size:1em;
+    font-size:1em;  
 
 }
 
