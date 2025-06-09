@@ -8,6 +8,7 @@
     background-color:blueviolet;
     color:aliceblue;
     padding:10px;
+    margin:10px;
     border-bottom:black 8px solid;
     border-top:black 8px solid;
 }
@@ -17,6 +18,7 @@
     list-style:none;
     border-bottom:dotted 3px orangered;
     text-align:center;
+    padding:5px;
 }
 .kiwi a {
     text-decoration:none;
@@ -24,7 +26,7 @@
     font-family:'Gill Sans';
 }
 .kiwi li:active {
-    font-color:red;
+    color:red;
 }
 .kiwi li:hover {
     transition:.3s;
