@@ -11,6 +11,7 @@ main {
     flex-wrap:wrap;
 }
 section {
+    color:burlywood;
     flex-grow:1;
     width:30%;
     background-color:cornsilk;

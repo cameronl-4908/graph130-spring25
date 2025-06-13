@@ -196,9 +196,28 @@
             </figure>
                     
         </section>
-        <section class="footer">
-            <p>EvCC | Spring 2025 | Cameron Larsh</p>
-        </section>
     </main>
+    <section class="footer">
+        <p>EvCC | Spring 2025 | Cameron Larsh</p>
+    </section>
+    
+    <script>
+        fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('nav-placeholder').innerHTML = data;
+
+            // Wait until nav.html is loaded, THEN attach toggle behavior
+
+            const toggleButton = document.getElementsByClassName('toggle-button')[0];
+            const navbarLinks = document.getElementsByClassName('kiwi')[0];
+
+            if (toggleButton && navbarLinks) {
+            toggleButton.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active');
+            });
+            }
+        });
+    </script>
 </body>
 </html>

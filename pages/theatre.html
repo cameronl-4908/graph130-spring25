@@ -47,5 +47,23 @@
 			<footer>
 				<p>"Ken Ludwig's Sherwood: The Adventures of Robin Hood” is presented by arrangement with Concord Theatricals on behalf of Samuel French, Inc. <a href="https://www.concordtheatricals.com" target="_blank">concordtheatricals.com</a></p>
 			</footer>
+			<script>
+            fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+
+                // Wait until nav.html is loaded, THEN attach toggle behavior
+
+                const toggleButton = document.getElementsByClassName('toggle-button')[0];
+                const navbarLinks = document.getElementsByClassName('kiwi')[0];
+
+                if (toggleButton && navbarLinks) {
+                toggleButton.addEventListener('click', () => {
+                navbarLinks.classList.toggle('active');
+                });
+                }
+            });
+        </script>
 		</body>
 </html>

@@ -7,25 +7,45 @@
 		
 		
 		<style>
-			body {
-				font-family: Arial, Helvetica, sans-serif;
-				margin:10px;
-			}
-			
-			
+			* {
+				box-sizing:border-box;
 
+			}
+			body {
+				margin:0;
+				padding:0;
+			}
 			.kiwi, .kiwi a, .kiwi ul, .kiwi li, .kiwi p {
+				
 				padding:0;
 				margin:0;
 				display:block;
 				font-size:16px;
 			}
+			.navbar {
+				font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+				color:white;
+				display:flex;
+				position:relative;
+				justify-content:space-between;
+				align-items:center;
+				margin:0;
+				color:white;
+				border-bottom:red;
+			}
+			.page-title p{
+				font-size:22px;
+				margin:8px;
+				color:white;
+			}
 			.kiwi {
 				background-color:rgb(50,0,100);
 				color:aliceblue;
-				padding:10px;
-				border-bottom:black 8px solid;
-				border-top:black 8px solid;
+				margin-right:10px;
+				
+			}
+			.mainnav {
+				background-color:rgb(50,0,100);
 			}
 
 			.kiwi li {
@@ -51,10 +71,67 @@
 				font-size:1.5em; 
 				color:yellow;
 			}
-			@media screen and (min-width:780px) {
+			.header {
+				font-family:Arial, Helvetica, sans-serif;
+				padding:1%;
+			}
+
+			/* mobile nav styles */
+
+			.toggle-button {
+				position:absolute;
+				top:10px;
+				right:16px;
+				display:none;
+				flex-direction:column;
+				justify-content:space-between;
+				width:30px;
+				height:21px;
+			}
+			.toggle-button .bar {
+				height:3px;
+				width:100%;
+				background-color:#ffffff;
+				border-radius:10px;
+			}
+
+			@media screen and (max-width:816px) {
+
+				.navbar {
+					flex-direction:column;
+					align-items:flex-start;
+
+				}
+				.toggle-button {
+					display:flex;
+				}
+				.kiwi {
+					display:none;
+					width:100%;
+				}
+				.kiwi ul {
+					width:100%;
+					flex-direction:column;
+				}
+				.kiwi ul li {
+					text-align:center;
+				}
+				.kiwi ul li a {
+					padding:8px 16px;
+				}
+				.kiwi.active {
+					display:flex;
+					
+				}
+				nav a {
+					border:0px;
+				}
+
+			}
+			@media screen and (min-width:816px) {
 				.kiwi ul {	
 				display:grid;
-				grid-template-columns:auto auto auto auto auto auto auto auto auto;
+				grid-template-columns:auto auto auto auto auto auto auto auto auto auto auto;
 				}
 				.kiwi li{
 					font-size:1em;  
@@ -64,24 +141,35 @@
 		</style>
 	</head>
 	<body>
-		<nav class="kiwi">
-            <ul>
-                <a href="pages/theatre.html" target="_blank"><li>Theatre</li></a>
-                <a href="pages/history-upgrade.html" target="_blank"><li>History</li></a>
-                <a href="pages/stewrecipe.html" target="_blank"><li>Stew</li></a>
-                <a href="pages/cascades.html" target="_blank"><li>Cascades</li></a>
-                <a href="pages/optimizingimages.html" target="_blank"><li>Optimizing</li></a>
-                <a href="pages/media-query.html" target="_blank"><li>Responsive</li></a>
-				<a href="pages/orcas.html" target="_blank"><li>Islands</li></a>
-				<a href="pages/gridlayout.html" target="_blank"><li>Grid</li></a>
-				<a href="https://cameronl-4908.github.io/graph130-final/" target="_blank"><li>Final</li></a>
-            </ul>
-        </nav>
-		<div>
+		<div class="mainnav">
+            <nav class="navbar">
+                <a href="#" class="toggle-button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+                <div class="page-title">
+                    <p>CJL GRAPH 130</p>
+                </div>
+                <nav class="kiwi">
+                    <ul>
+                        <a href="pages/theatre.html" target="_blank"><li>Theatre</li></a>
+                        <a href="pages/history-upgrade.html" target="_blank"><li>History</li></a>
+                        <a href=" pages/stewrecipe.html" target="_blank"><li>Stew</li></a>
+                        <a href="pages/cascades.html" target="_blank"><li>Cascades</li></a>
+                        <a href="pages/optimizingimages.html" target="_blank"><li>Optimizing</li></a>
+                        <a href="pages/fluid.html" target="_blank"><li>Fluid</li></a>
+                        <a href="pages/media-query.html" target="_blank"><li>Responsive</li></a>
+                        <a href="pages/orcas.html" target="_blank"><li>Islands</li></a>
+                        <a href="pages/gridlayout.html" target="_blank"><li>Grid</li></a> 
+                        <a href="https://cameronl-4908.github.io/graph130-final/" target="_blank"><li>Final</li></a>
+                    </ul>
+                </nav>  
+            </nav>
+        </div>
+		<div class="header">
 			<h1>Cameron Larsh</h1>
 			<h2>Everett Community College Spring 2025</h2>
-		</div>
-		<div>
 			<h3>How many quarters have you attended EvCC?</h3>
 			<p>7 quarters since Winter 2023</p>
 			<h3>What degree/certificate program are you pursuing?</h3>
@@ -93,5 +181,20 @@
 			<h3>What is your favorite color?</h3>
 			<p style="color: #9457eb;">Lavender Indigo</p>
 		</div>
+		<script>
+        fetch('nav.html')
+        .then(response => response.text())
+        .then(data => {
+            const toggleButton = document.getElementsByClassName('toggle-button')[0];
+            const navbarLinks = document.getElementsByClassName('kiwi')[0];
+
+            if (toggleButton && navbarLinks) {
+            toggleButton.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active');
+            });
+            }
+        });
+    	</script>
 	</body>
+	
 </html>

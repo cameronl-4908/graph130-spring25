@@ -66,5 +66,23 @@
                 <a href="http://snook.ca/archives/html_and_css/vm-vh-units" target="_blank">VW units</a>.
             </section>
         </article>
+        <script>
+            fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+
+                // Wait until nav.html is loaded, THEN attach toggle behavior
+
+                const toggleButton = document.getElementsByClassName('toggle-button')[0];
+                const navbarLinks = document.getElementsByClassName('kiwi')[0];
+
+                if (toggleButton && navbarLinks) {
+                toggleButton.addEventListener('click', () => {
+                navbarLinks.classList.toggle('active');
+                });
+                }
+            });
+        </script>
     </body>
 </html>

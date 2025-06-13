@@ -2,12 +2,15 @@
     <html lang="en">
         <head>
             <title>History of the Internet - Briefly</title>
-            <link href="../styles/history.css" rel="stylesheet" type="text/css">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
             <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+            
+            <link href="../styles/history.css" rel="stylesheet" type="text/css">
             <link href="../styles/mobile.css" rel="stylesheet">
+            
+            
         </head>
         <body>
             <div id="nav-placeholder"></div>
@@ -30,7 +33,7 @@
                 </section>
                 <section data-aos="flip-right">
                     <p><b>ARPA</b> - (Advanced Research Project Agency) later DARPA (defense)</p>
-                    <img src="../images/4-arpanet2.gif" alt="ARPA" height="300px">
+                    <img src="../images/4-arpanet2.gif" alt="ARPA" height="250px">
                     <img src="../images/5-early-arpanet.jpg" alt="ARPA" width="90%">
                 </section>
                 <section data-aos="zoom-out-up">
@@ -74,5 +77,23 @@
             <script>
                 AOS.init();
             </script>
+            <script>
+            fetch('nav.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('nav-placeholder').innerHTML = data;
+
+                // Wait until nav.html is loaded, THEN attach toggle behavior
+
+                const toggleButton = document.getElementsByClassName('toggle-button')[0];
+                const navbarLinks = document.getElementsByClassName('kiwi')[0];
+
+                if (toggleButton && navbarLinks) {
+                toggleButton.addEventListener('click', () => {
+                navbarLinks.classList.toggle('active');
+                });
+                }
+            });
+        </script>
         </body>
     </html>
